@@ -1,8 +1,11 @@
 {
-  "name": "angular-daterange-picker",
+  "name": "daterange-picker-angular",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
-  }
+  },
+  "author": "Matthias Schaekels",
+  "license": "MIT",
+  "repository": "https://github.com/Schaekels/angular-daterange-picker"
 }
