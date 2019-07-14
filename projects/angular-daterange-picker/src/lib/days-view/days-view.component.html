@@ -1,0 +1,15 @@
+<div class='days-container' (mouseleave)='dayService.removeHoverEffect()'>
+  <div class='days-header'>
+    <div class='day-weekday text-capitalize' *ngFor='let head of daysHeaders'>{{ head }}</div>
+  </div>
+  
+  <div class='days-body text-bold'>
+    <div *ngFor='let day of preDays' class='pre-day-item'>{{ day }}</div>
+    <div *ngFor='let day of days' class='day-item hover-effect' (click)='selectDay(day)' 
+    [class.active]='dayService.isDayActive(day, date)' 
+    [class.end-active]='dayService.isEndActive(day, date)' #dayElement>
+    {{ day }}
+    </div>
+    <div *ngFor='let day of afterDays' class='pre-day-item'>{{ day }}</div>
+  </div>
+</div>

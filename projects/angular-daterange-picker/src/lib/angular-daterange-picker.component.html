@@ -1,0 +1,38 @@
+<ng-container *ngIf='isMobile === false'>
+  <div class='snek-card-header'>
+    <i class='material-icon-left hover-effect'>
+      <svg width="24" height="24" viewBox="0 0 24 24"><path style="fill:#999;" d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/><path fill="none" d="M0 0h24v24H0V0z"/></svg>
+    </i>
+    <div class='titles'>
+      <h4 class='snek-card-title text-capitalize'>{{ picker.headerLeft }}</h4>
+      <h4 class='snek-card-title text-capitalize'>{{ picker.headerRight }}</h4>
+    </div>
+    <i class='material-icon-right hover-effect'>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path style="fill:#999;" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/><path fill="none" d="M0 0h24v24H0V0z"/></svg>
+    </i>
+  </div>
+  <div class='snek-card-body'>
+    <div class='days'>
+      <ang-days-view [date]='date' [locale]='locale' (daySelected)='firstDaySelected($event)'></ang-days-view>
+    </div>
+    <div class='days'>
+      <!-- <ang-days-view [date]='date' [locale]='locale' (daySelected)='secondDaySelected($event)'></ang-days-view> -->
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf='isMobile === true'>
+  <div class='snek-card-header' *ngIf='isMobile === true'>
+    <i class='material-icon-left hover-effect' (click)='picker.onPrevious.next()'>
+      <svg width="24" height="24" viewBox="0 0 24 24"><path style="fill:#999;" d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/><path fill="none" d="M0 0h24v24H0V0z"/></svg>
+    </i>
+    <h4 class='snek-card-title text-capitalize'>{{ picker.headerLeft }}</h4>
+    <i class='material-icon-right hover-effect' (click)='picker.onNext.next()'>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path style="fill:#999;" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/><path fill="none" d="M0 0h24v24H0V0z"/></svg>
+    </i>
+  </div>
+  <div class='snek-card-body'>
+    <ang-days-view [date]='date' [locale]='locale' (daySelected)='firstDaySelected($event)'></ang-days-view>
+  </div>
+</ng-container>
+
